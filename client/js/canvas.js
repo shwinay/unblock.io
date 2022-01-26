@@ -5,16 +5,20 @@ canvas.height = canvasSize;
 let ctx = canvas.getContext('2d');
 
 // define game variables
-let blockList = [new Block(getBlockSize() * 2, getBlockSize() * 3, 2, 1, ctx), 
-                 new Block(getBlockSize() * (gridSize - 2), 0, 1, 2, ctx, 0, 'vertical'),
-                 new Block(getBlockSize() * 1, 0, 1, 2, ctx, 0, 'vertical'),
-                 new Block(getBlockSize() * 4, getBlockSize() * 3, 1, 1, ctx, 0, 'horizontal'),
-                ]
+// let blockList = [new Block(getBlockSize() * 2, getBlockSize() * 3, 2, 1, ctx, 1, 'horizontal'), 
+//                  new Block(getBlockSize() * (gridSize - 2), 0, 1, 2, ctx, 0, 'vertical'),
+//                  new Block(getBlockSize() * 1, 0, 1, 2, ctx, 0, 'vertical'),
+//                  new Block(getBlockSize() * 4, getBlockSize() * 3, 1, 1, ctx, 0, 'horizontal'),
+//                 ]
+
+let blockList = getMapBlockList(sampleMap, ctx);
 let selectedBlockIndex = -1;
 let mousePos = {
     x: null,
     y: null,
 }
+
+console.log(parseMap(sampleMap));
 
 // event listeners
 canvas.onmousemove = e => {

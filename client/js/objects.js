@@ -14,14 +14,13 @@ class Block {
         this.type = type;        
         this.selected = false;
         this.orientation = orientation;
-        console.log(orientation);
     }
 
     render() {
-        ctx.fillStyle = 'rgba(205, 127, 50, 1)';
+        ctx.fillStyle = this.type == 0 ? 'rgba(205, 127, 50, 1)' : 'rgba(236, 100, 75, 1)';
         ctx.fillRect(this.x, this.y, getBlockSize() * this.width, getBlockSize() * this.height);
         ctx.lineWidth = 8;
-        ctx.strokeStyle = 'rgb(123, 63, 0, 1)';
+        ctx.strokeStyle = this.type == 0 ? 'rgb(123, 63, 0, 1)' : 'rgba(196, 77, 86, 1)';
         ctx.strokeRect(this.x + this.ctx.lineWidth / 2, this.y + this.ctx.lineWidth / 2, getBlockSize() * this.width - ctx.lineWidth, 
                        getBlockSize() * this.height - ctx.lineWidth);
     }

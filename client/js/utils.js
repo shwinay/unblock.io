@@ -85,12 +85,16 @@ let handleBlockMovement = (blockList, selectedBlockIndex) => {
                     blockPos = otherBlockTop;
                 }
                 // check top collision
+                //TODO: FIX COLLISION BUG
                 else if (blockTop > otherBlockBottom && blockRef.y < otherBlockBottom) {
+                    console.log('top collision!');
                     blockPos = otherBlockBottom - blockHeight;
+                    console.log(blockPos);
                 }
             }
             
         }
+        // console.log(mousePos);
 
         blockList[selectedBlockIndex].y = blockPos;
     }
